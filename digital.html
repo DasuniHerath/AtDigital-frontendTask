@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>At Digital</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="C:/Users/User/Desktop/NIC/app/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <style>
+      /* Top Navigation */
+      .top-navigation {
+        background: #6b3cc9;
+        padding: 10px 20px; /* Adjust padding for smaller screens */
+      }
+
+      /* Logo */
+      .logo {
+        height: 25px;
+      }
+      .hero-image {
+        width: 100%;
+        height: auto;
+      }
+
+      /* Media query for smaller screens */
+      @media (max-width: 768px) {
+        .hero-image {
+          max-width: 100%; /* Ensure the image doesn't exceed the width of its container */
+          height: auto; /* Allow the image height to adjust proportionally */
+        }
+      }
+      .hero-image1 {
+        width: 414px;
+        height: 416px;
+        gap: 0px;
+      }
+
+      /* Services, About Us, Contact Us, Careers */
+      .nav-item {
+        font-family: "Inter";
+        font-weight: 500;
+        font-size: 14px;
+        color: #ffffff;
+      }
+
+      /* Adjustments for smaller screens */
+      @media (max-width: 991px) {
+        .top-navigation {
+          padding: 10px; /* Adjust padding for smaller screens */
+        }
+      }
+
+      /* Button */
+      .btn {
+        background: #f28d35;
+        border-radius: 4px;
+        color: #ffffff;
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        padding: 12px 20px;
+      }
+
+      /* Adjustments for smaller screens */
+      @media (max-width: 767px) {
+        .btn {
+          width: 100%; /* Make button full width on smaller screens */
+          margin-top: 10px; /* Add some space between elements */
+        }
+      }
+      /* Hero Section */
+      .con1 {
+        position: absolute;
+        top: 70%;
+        left: 5%;
+        padding: 20px;
+        max-width: 800px;
+        z-index: 1;
+        background: linear-gradient(256.73deg, #1cbddd 27.86%, #4dca79 100%);
+        padding: 20px; /*Adjust padding as needed */
+        margin: 0 auto; /* Center container horizontally */
+      }
+
+      .con1-text {
+        font-size: 1.2rem;
+        color: black;
+        text-align: left;
+      }
+      /* Media query for smaller screens */
+      @media (max-width: 768px) {
+        .con1 {
+          top: 50%; /* Adjust the vertical position for smaller screens */
+          left: 50%; /* Center horizontally on smaller screens */
+          transform: translate(
+            -50%,
+            -50%
+          ); /* Center both horizontally and vertically */
+          margin-left: 0; /* Remove negative margin for smaller screens */
+        }
+      }
+
+      .hero {
+        position: relative;
+        height: 100vh; /* Adjust height as needed */
+        width: 100%;
+        left: 10px;
+        top: 50%;
+        z-index: 0;
+        background-size: cover;
+        background-position: center;
+        color: black;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero-h1 {
+        font-size: 3rem;
+        color: #6b3cc9;
+        margin-bottom: 20px;
+      }
+
+      .hero-p {
+        font-size: 1.2rem;
+        top: 20%;
+        margin-bottom: 20%;
+        width: 100%;
+      }
+
+      .hero-btn {
+        padding: 10px 20px;
+        background-color: #f28d35;
+        color: #fff;
+        font-size: 1.2rem;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      /* Responsive Layout */
+      @media (max-width: 992px) {
+        /* Adjustments for medium screens */
+        .hero-h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-p {
+          font-size: 1rem;
+        }
+
+        .hero-btn {
+          font-size: 1rem;
+          padding: 8px 16px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        /* Adjustments for smaller screens */
+        .hero-h1 {
+          font-size: 2rem; /* Reduced further for smaller screens */
+        }
+
+        .hero-p {
+          font-size: 0.9rem; /* Reduced further for smaller screens */
+        }
+      }
+      /* FAQ Container */
+      .faq-container {
+        width: 100%;
+        text-align: center;
+      }
+
+      .faq-container h2 {
+        font-size: 2rem;
+        color: #6b3cc9;
+        margin-bottom: 20px;
+      }
+
+      .faq-item {
+        text-align: left;
+        position: relative;
+
+        margin-bottom: 20px;
+      }
+      .toggle-icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 100%;
+      }
+
+      .faq-item h3 {
+        font-size: 1.5rem;
+      }
+
+      .faq-item p {
+        font-size: 1.2rem;
+      }
+      .faq-item input[type="radio"] {
+        display: none;
+      }
+
+      .faq-item .answer {
+        display: none;
+        color: #6b3cc9;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+      }
+
+      .faq-item input[type="radio"]:checked + label .toggle-icon::after {
+        content: "-";
+        color: #6b3cc9; /* Color for toggled icon */
+      }
+
+      .faq-item input[type="radio"]:checked ~ .answer {
+        display: block;
+        color: #6b3cc9;
+      }
+      .faq-item label h3 {
+        color: black; /* Default color for question text */
+      }
+
+      .faq-item input[type="radio"]:checked + label h3 {
+        color: #6b3cc9; /* Color for question text when toggled */
+      }
+
+      .faq-item .toggle-icon::after {
+        content: "+";
+        display: inline-block;
+        margin-right: 5px;
+        transition: transform 0.3s ease;
+        color: black; /* Default color for icon */
+      }
+
+      .faq-item input[type="radio"]:checked + label .toggle-icon::after {
+        transform: rotate(0deg);
+      }
+
+      /* Line above links */
+      .line-above-links {
+        width: 630px;
+        height: 0px;
+        gap: 0px;
+        border: 1px solid #ffffff;
+        opacity: 0px;
+        align-content: center;
+        margin: auto;
+      }
+
+      /* Footer */
+      .footer {
+        bottom: 0;
+        width: 100%;
+        background: #6b3cc9;
+        padding: 40px 80px 20px; /* Adjust padding as needed */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+      }
+
+      /* Footer Title */
+      .footer-title {
+        font-family: "Inter";
+        font-weight: 600;
+        font-size: 21px;
+        line-height: 25px;
+        color: #ffffff;
+      }
+
+      /* Footer Links */
+      .footer-links {
+        font-family: "Inter";
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: #ffffff;
+        display: flex;
+        gap: 10px; /* Adjust gap between links */
+      }
+      .footer-link {
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      .privacy-policy {
+        color: #ffffff;
+        text-decoration: none;
+        margin: auto;
+      }
+
+      /* Adjustments for smaller screens */
+      @media (max-width: 991px) {
+        .footer {
+          padding: 20px 10px; /* Adjust padding for smaller screens */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark top-navigation">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="C:\Users\User\Downloads\Logo.png"
+            alt="At Digital"
+            class="logo"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Careers</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Row 1 -->
+        <div class="col-lg-12 p-0">
+          <img
+            src="C:\Users\User\Downloads\Hero Section.png"
+            alt="Hero Image"
+            class="img-fluid hero-image"
+          />
+        </div>
+        <div class="con1">
+          <p class="con1-text">
+            We crush your , goals, and sales records - without the B.S.
+          </p>
+          <a href="#" class="hero-btn">Get Free Consultation</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="hero">
+            <!-- Column 1 -->
+            <div class="row">
+              <!-- Left side with image -->
+              <div class="col-md-6">
+                <img
+                  src="C:\Users\User\Downloads\image 2.png"
+                  class="img-fluid hero-image1"
+                  alt="..."
+                />
+              </div>
+              <!-- Right side with title and content -->
+              <div class="col-md-6">
+                <div class="card-body">
+                  <h5 class="hero-h1">Web & Mobile App Development</h5>
+                  <p class="hero-p">
+                    Your web and mobile Apps are pieces of the puzzle to grow
+                    your business. We use frameworks which tailor content and
+                    engagement methods to respond to different intents shown by
+                    your potential customers who interact with your business
+                    online.
+                  </p>
+                  <a href="#" class="hero-btn">Learn more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Column 2 -->
+        <div class="row">
+          <div class="hero">
+            <!-- Column 1 -->
+            <div class="row mt-3">
+              <!-- Left side with image -->
+              <div class="col-md-6">
+                <div class="card-body">
+                  <h5 class="hero-h1">Digital Strategy Consulting</h5>
+                  <p class="hero-p">
+                    Your digital strategy should complement the overall
+                    marketing strategy of the company. In online marketing, each
+                    component will never work in isolation and every business
+                    needs a different mix. We provide a clear concept and
+                    strategic overview to find the most efficient model for your
+                    business.
+                  </p>
+                </div>
+
+                <!-- Lower column with button -->
+                <div class="col-md-12">
+                  <div class="card-body">
+                    <a href="#" class="hero-btn">Learn more</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Right side with title and content -->
+              <div class="col-md-6">
+                <img
+                  src="C:\Users\User\Downloads\image 1.png"
+                  class="img-fluid hero-image1"
+                  alt="..."
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FAQ Container -->
+      <div class="row mt-4">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="faq-container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+              <input type="radio" id="question1" name="faq" />
+              <label for="question1">
+                <h3>
+                  <span class="toggle-icon"></span>Lorem ipsum dolor sit amet
+                  consectetur. Leo at sit eu libero?
+                </h3>
+              </label>
+              <div class="answer">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur. Faucibus commodo
+                  suscipit id ipsum. Elementum ultrices nulla faucibus odio est
+                  sed aliquam. Sapien massa morbi risus sagittis tortor integer.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <input type="radio" id="question2" name="faq" />
+              <label for="question2">
+                <h3>
+                  <span class="toggle-icon"></span>Lorem ipsum dolor sit amet
+                  consectetur. Tortor scelerisque integer?
+                </h3>
+              </label>
+              <div class="answer">
+                <p>answer 2.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <input type="radio" id="question3" name="faq" />
+              <label for="question3">
+                <h3>
+                  <span class="toggle-icon"></span> Lorem ipsum dolor sit amet
+                  consectetur. Faucibus scelerisque nunc?
+                </h3>
+              </label>
+              <div class="answer">
+                <p>answer 3.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-4">
+            <a class="navbar-brand" href="#">
+              <img
+                src="C:\Users\User\Downloads\Logo.png"
+                alt="At Digital"
+                class="logo"
+              />
+            </a>
+
+            <p>
+              Your goal is our target. Not anything in between. We use online
+              marketing platforms and tools to achieve a single objective - your
+              business results.
+            </p>
+          </div>
+          <div class="col-lg-4">
+            <h3 class="footer-title">Our Technologies</h3>
+            <p>Laravel</p>
+            <p>NextJS</p>
+            <p>NodeJS</p>
+            <p>Gatsby</p>
+          </div>
+          <div class="col-lg-4">
+            <h3 class="footer-title">Our Services</h3>
+            <p>Digital marketing</p>
+            <p>Web & mobile app development</p>
+            <p>Data & analysis</p>
+          </div>
+        </div>
+        <div class="line-above-links"></div>
+
+        <div class="footer-links">
+          <span class="footer-link privacy-policy"
+            >Privacy Policy | Terms & Conditions</span
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS (optional, if you need dropdowns, toggles, etc.) -->
+    <script src="C:/Users/User/Desktop/NIC/app/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const questions = document.querySelectorAll(".question");
+
+        questions.forEach((question) => {
+          question.addEventListener("click", function () {
+            const icon = this.querySelector(".toggle-icon");
+            const answer = this.nextElementSibling;
+            if (icon.textContent === "+") {
+              icon.textContent = "-";
+            } else {
+              icon.textContent = "+";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
